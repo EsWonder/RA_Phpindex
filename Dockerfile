@@ -1,14 +1,14 @@
-# Usa una imagen base de PHP
+# Use an official PHP image as the base image
 FROM php:8.0-cli
 
-# Crea un directorio de trabajo
+# Set up a working directory within the container
 WORKDIR /app
 
-# Copia el archivo PHP en el contenedor
+# Copy the PHP file into the container's working directory
 COPY index.php .
 
-# Exponer el puerto que usará el servidor
+# Expose the port that the server will use
 EXPOSE 8000
 
-# Ejecuta el servidor PHP embebido en el puerto 8000
+# Run the built-in PHP server on port 8000 and bind it to all available IP addresses
 CMD ["php", "-S", "0.0.0.0:8000", "index.php"]
